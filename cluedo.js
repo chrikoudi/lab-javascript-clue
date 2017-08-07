@@ -54,7 +54,7 @@ suspects.push({
 });
 
 //Weapons' Cards
-var weapons = []; // name, painLevel
+let weapons = []; // name, painLevel
 
 weapons.push({
     name:"Rope",
@@ -102,7 +102,7 @@ weapons.push({
 });
 
 //Rooms' Cards
-var rooms = []; // name
+let rooms = []; // name
 
 rooms.push({ name: "Dining room"});
 rooms.push({ name: "Conservatory"});
@@ -123,25 +123,25 @@ rooms.push({ name: "A patio"});
 //Creating and Revealing the Mystery
 
 function getRandomCard(cards) {
-  var rand = Math.floor(Math.random()*cards.length);
+  let rand = Math.floor(Math.random()*cards.length);
   return cards[rand];
 }
 
-var envelope = {
+let envelope = {
   suspect: getRandomCard(suspects),
   weapon: getRandomCard(weapons),
   room: getRandomCard(rooms)
 };
 
 function revealMystery () {
-  var name = envelope.suspect.firstName + " " + envelope.suspect.lastName;
+  let name = envelope.suspect.firstName + " " + envelope.suspect.lastName;
   console.log(name, "", envelope.weapon.name, "", envelope.room.name);
 }
 
 function guessSolution() {
-  var suspName = prompt("Who do you think did it?");
-  var weapon = prompt("What do you think they used as a weapon?");
-  var room = prompt("Where do you think that the crime happened?");
+  let suspName = prompt("Who do you think did it?");
+  let weapon = prompt("What do you think they used as a weapon?");
+  let room = prompt("Where do you think that the crime happened?");
   
   if (suspName === (envelope.suspect.firstName + " " + envelope.suspect.lastName) && (weapon === envelope.weapon.name) && 
     (room === envelope.room.name)) {
